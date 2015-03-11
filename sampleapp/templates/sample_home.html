@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<!-- 
+ * parallax_login.html
+ * @Author original @msurguy (tw) -> http://bootsnipp.com/snippets/featured/parallax-login-form
+ * @Tested on FF && CH
+ * @Reworked by @kaptenn_com (tw)
+ * @package PARALLAX LOGIN.
+--> 
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
+        <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
+
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+        <script src="{% static "js/parallex.js" %}"></script>
+
+        <link rel="stylesheet" href="{% static "css/parallex_s.css" %}">
+        <body>
+            <center>
+            <div class="container">
+            <button type="button" class="btn btn-lg btn-success btn-block">Welcome {{name}}</button>
+            </div>
+            </center>
+            <div class="container">
+                <div class="row vertical-offset-100">
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">                                
+                                <div class="row-fluid user-row">
+                                    <img src="https://mainlyinternational.files.wordpress.com/2015/01/welcome1.jpg" class="img-responsive" alt="Conxole Admin"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+            <a href="/loginapp/logout/" class="btn btn-lg btn-success btn-block">Logout</a>
+            </div>
+            </center>
+        </body>
+
+</html>

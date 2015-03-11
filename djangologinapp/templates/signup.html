@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<!-- 
+ * parallax_login.html
+ * @Author original @msurguy (tw) -> http://bootsnipp.com/snippets/featured/parallax-login-form
+ * @Tested on FF && CH
+ * @Reworked by @kaptenn_com (tw)
+ * @package PARALLAX LOGIN.
+--> 
+        <link rel="icon" type="image/ico" href="http://www.favicon-generator.org/favicon-generator/htdocs/favicons/2015-01-28/e40818ddfb13ef97491782fe6c9b3357.ico"/>
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+        <script src="{% static "js/parallex.js" %}"></script>
+
+        <link rel="stylesheet" href="{% static "css/parallex.css" %}">
+        <body background="{{ img_url|default:'http://www.freelargeimages.com/wp-content/uploads/2014/12/Black_background-7.jpg' }}">
+            <div class="container">
+                <div class="row vertical-offset-100">
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">                                
+                                <div class="row-fluid user-row">
+                                    <img src="http://s11.postimg.org/7kzgji28v/logo_sm_2_mr_1.png" class="img-responsive" alt="Conxole Admin"/>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form action="{{app_url_domain}}signup/" method="post" accept-charset="UTF-8" role="form" class="form-signin">
+                                {% csrf_token %}
+                                    <fieldset>
+                                        <label class="panel-login">
+                                            <div class="login_result"></div>
+                                        </label>
+                                        <input class="form-control" placeholder="Username or Email" name="username" id="username" type="text">
+                                        <input class="form-control" placeholder="Password" name="password" id="password" type="password">
+                                        <br></br>
+                                        <input class="btn btn-lg btn-success btn-block" type="submit" id="login" value="SignUp »">
+                                        {% if error %}
+                                        <center><div class="alert alert-danger" role="alert">
+                                          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                          <span class="sr-only">Error:</span>
+                                          {{ err_msg }}
+                                        </div>
+                                        </center>
+                                        {% endif %}
+                                    </fieldset>
+                                </form>
+                            <div class="">
+                                <center><a href="{{app_url_domain}}login/">Go to sign in ?</a></center>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+
+</html>
