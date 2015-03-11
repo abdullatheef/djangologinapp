@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-#from mongoengine.django.auth import User
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -10,6 +9,11 @@ import json
 import requests
 from mongoengine import *
 from django.db import IntegrityError
+try:
+    if settings.MONGO_BACKEND:
+        from mongoengine.django.auth import User
+except AttributeError:
+    pass
 
 # Create your views here.
 

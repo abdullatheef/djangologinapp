@@ -7,8 +7,8 @@ https://docs.djangoproject.com/en/1.7/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
-#from mongoengine import *
-#connect('loginapp')
+from mongoengine import *
+connect('djangologinapp')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'mongoengine.django.mongo_auth',
+    'mongoengine.django.mongo_auth',
     'djangologinapp',
     'sampleapp'
 )
@@ -64,8 +64,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.dummy'
     }
-}"""
-
+}
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -73,13 +73,13 @@ DATABASES = {
     }
 }
 
-"""
+MONGO_BACKEND = True
 AUTHENTICATION_BACKENDS = (
     'mongoengine.django.auth.MongoEngineBackend',
 )
 AUTH_USER_MODEL = 'mongo_auth.MongoUser'
 SESSION_ENGINE = 'mongoengine.django.sessions'
-SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'"""
+SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 

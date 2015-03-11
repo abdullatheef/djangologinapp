@@ -65,4 +65,36 @@ urlpatterns = patterns('',
 
 ```
 Another thing `logout url` throughout your application must be `APP_URL_DOMAIN + 'logout/' ` which you can attchach to logout button
+Then put `@login_required` in all your views in  `views.py`.Ith will redirect to `LOGIN_URL` is  `settings.py` 
 
+
+#FOR MONGOENGINE AS BACKEND
+
+##in project/settings.py
+
+```sh
+from mongoengine import *
+connect('djangologinapp')
+
+INSTALLED_APPS = (
+    ...
+    'mongoengine.django.mongo_auth',
+    'djangologinapp',
+    ...
+)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.dummy'
+    }
+}
+MONGO_BACKEND = True
+AUTHENTICATION_BACKENDS = (
+    'mongoengine.django.auth.MongoEngineBackend',
+)
+AUTH_USER_MODEL = 'mongo_auth.MongoUser'
+SESSION_ENGINE = 'mongoengine.django.sessions'
+SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
+```
+`all other settings are same above`
+##in your views.py
+`from mongoengine.django.auth import User`
