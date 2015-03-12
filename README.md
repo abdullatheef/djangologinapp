@@ -3,7 +3,7 @@
 djangologinapp, as the name refers it is just a login, signup only
 
   - Used with mongoengine backend also with some modifications
-  - Nedd to some extra settings in settings.py
+  - Need some extra settings in settings.py
 
 ### Version
 0.1.0
@@ -34,10 +34,10 @@ LOGIN_URL = APP_URL_DOMAIN + 'login/'
 
 `To enable google sign in add following to project/settings.py`
 ```sh
-GOOGLE_SIGNIN = True
+#GOOGLE_SIGNIN = True  #default False, if True put google credentials.
 GOOGLE_CLIENT_ID = ''
 GOOGLE_CLIENT_SECRET = ''
-GOOGLE_REDIRECT_URL = '<domain> + APP_URL_DOMAIN + 'login/' #for development=>'http://localhost:8000' + APP_URL_DOMAIN + 'login/' #(http://localhost:8000/loginapp/login/)
+GOOGLE_REDIRECT_URL = '<domain>' + APP_URL_DOMAIN + 'login/' #for development=>'http://localhost:8000' + APP_URL_DOMAIN + 'login/' #(http://localhost:8000/loginapp/login/)
 GOOGLE_SCOPE = 'profile email'
 GOOGLE_GRANT_TYPE = 'authorization_code'
 GOOGLE_OAUTH2_URL = 'https://accounts.google.com/o/oauth2/auth?'
